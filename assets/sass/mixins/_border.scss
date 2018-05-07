@@ -1,0 +1,111 @@
+/*
+  Border CheatSheet Mixins
+  - Version: 2.1
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+@mixin border($size: 1px, $type: solid,$colour: default(color, uno)) {
+  border: $size $type $colour;
+}
+@mixin border-top($size: 1px, $type: solid, $colour: default(color, uno)) {
+  border-top: $size $type $colour;
+}
+@mixin border-bottom($size: 1px, $type: solid, $colour: default(color, uno)) {
+  border-bottom: $size $type $colour;
+}
+@mixin border-left($size: 1px, $type: solid, $colour: default(color, uno)) {
+  border-left: $size $type $colour;
+}
+@mixin border-right($size: 1px, $type: solid, $colour: default(color, uno)) {
+  border-right: $size $type $colour;
+}
+@mixin border-v($size: 1px, $type: solid, $colour: default(color, uno)) {
+  @include border-top($colour, $size, $type);
+  @include border-bottom($colour, $size, $type);
+}
+@mixin border-h($size: 1px, $type: solid, $colour: default(color, uno)) {
+  @include border-left($colour, $size, $type);
+  @include border-right($colour, $size, $type);
+}
+@mixin border-vertical($size: 1px, $type: solid, $colour: default(color, uno)) {
+  @include border-v($colour, $size, $type);
+}
+@mixin border-horizontal($size: 1px, $type: solid, $colour: default(color, uno)) {
+  @include border-h($colour, $size, $type);
+}
+@mixin border-no() {
+  border: medium none default(color, uno);
+}
+
+// Border radius
+@mixin border-radius($radius: 2px) {
+  border-radius: $radius;
+  -ms-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-radius-top($radius: 2px) {
+  border-radius: $radius $radius 0px 0px;
+  -ms-border-radius: $radius $radius 0px 0px;
+  -moz-border-radius: $radius $radius 0px 0px;
+  -webkit-border-radius: $radius $radius 0px 0px;
+  background-clip: padding-box;
+}
+@mixin border-radius-bottom($radius: 2px) {
+  border-radius: 0px 0px $radius $radius;
+  -ms-border-radius: 0px 0px $radius $radius;
+  -moz-border-radius: 0px 0px $radius $radius;
+  -webkit-border-radius: 0px 0px $radius $radius;
+  background-clip: padding-box;
+}
+@mixin border-radius-left($radius: 2px) {
+  border-radius: $radius 0px 0px $radius;
+  -ms-border-radius: $radius 0px 0px $radius;
+  -moz-border-radius: $radius 0px 0px $radius;
+  -webkit-border-radius: $radius 0px 0px $radius;
+  background-clip: padding-box;
+}
+@mixin border-radius-right($radius: 2px) {
+  border-radius: 0px $radius $radius 0px;
+  -ms-border-radius: 0px $radius $radius 0px;
+  -moz-border-radius: 0px $radius $radius 0px;
+  -webkit-border-radius: 0px $radius $radius 0px;
+  background-clip: padding-box;
+}
+@mixin border-radius-top-right($radius: 2px) {
+  border-radius: 0px $radius 0px 0px;
+  -ms-border-radius: 0px $radius 0px 0px;
+  -moz-border-radius: 0px $radius 0px 0px;
+  -webkit-border-radius: 0px $radius 0px 0px;
+  background-clip: padding-box;
+}
+@mixin border-radius-top-left($radius: 2px) {
+  border-radius: $radius 0px 0px 0px;
+  -ms-border-radius: $radius 0px 0px 0px;
+  -moz-border-radius: $radius 0px 0px 0px;
+  -webkit-border-radius: $radius 0px 0px 0px;
+  background-clip: padding-box;
+}
+@mixin border-radius-bottom-right($radius: 2px) {
+  border-radius: 0px 0px $radius 0px;
+  -ms-border-radius: 0px 0px $radius 0px;
+  -moz-border-radius: 0px 0px $radius 0px;
+  -webkit-border-radius: 0px 0px $radius 0px;
+  background-clip: padding-box;
+}
+@mixin border-radius-bottom-left($radius: 2px) {
+  border-radius: 0px 0px 0px $radius;
+  -ms-border-radius: 0px 0px 0px $radius;
+  -moz-border-radius: 0px 0px 0px $radius;
+  -webkit-border-radius: 0px 0px 0px $radius;
+  background-clip: padding-box;
+}
+@mixin border-radius-no() {
+  border-radius: 0px;
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  background-clip: padding-box;
+}

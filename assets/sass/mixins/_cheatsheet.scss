@@ -1,0 +1,31 @@
+/*
+  CSS CheatSheet Mixin
+  - Version: 2.1
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+@mixin blur($percent){
+  -webkit-filter: blur(#{$percent});
+  -moz-filter: blur(#{$percent});
+  -o-filter: blur(#{$percent});
+  -ms-filter: blur(#{$percent});
+  filter: blur(#{$percent});
+}
+@mixin hover{
+  @media (hover: hover){
+    &:hover{
+      @content;
+    }
+  }
+}
+@mixin ie{
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     @content;
+   }
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /static/
+Disallow: /common_page/
+Disallow: /static/*.jpg$
+
+#sitemap: /sitemap.xml

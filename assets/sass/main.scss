@@ -1,0 +1,21 @@
+/*
+  Main stylesheet
+  - Version: 2.2
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+// import config
+@import 'config';
+
+// import mixins (require config)
+@import 'mixins/index';
+
+// import fontpack
+@import 'fontpack/index';
+
+// import components (require config, fontpack)
+@import 'components/index';
+
+// project settings
+@import 'project/index';

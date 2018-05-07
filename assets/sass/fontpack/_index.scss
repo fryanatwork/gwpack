@@ -1,0 +1,45 @@
+/*
+  Index of fontpack
+  - Version: 2.2
+  - Edited: Fryan
+  - Modified: 2018-05-07
+*/
+
+@import 'sources';
+@font-face{
+	font-family: 'EN';
+	src: local('San Francisco'), 'San Francisco', local('Open Sans'), 'Open Sans', local('Helvetica'), local('Arial');
+	font-weight:700;
+}
+@font-face {
+  font-family: M;
+  src: local('黑體-繁'),local('Heiti TC');
+  font-weight: 300;
+}
+@font-face {
+  font-family: W;
+  src: local('微軟正黑體'),local('Microsoft JhengHei');
+  font-weight: 300;
+}
+@font-face{
+	font-family: L;
+	src: local('WenQuanYi Zen Hei'),local('TW-Kai');
+	font-weight:300;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  /*--100 / 300 / 400 / 500 / 700 / 900--*/
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+
+html, body{
+  &, *{
+    font-family:'EN', 'M', 'W', 'L', 'Noto Sans TC', sans-serif !important;
+    word-break: initial !important;
+    text-justify: inter-word !important;
+   }
+}

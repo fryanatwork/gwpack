@@ -1,0 +1,16 @@
+/*
+  Fetching Config Settings Mixin
+  - Version: 2.1
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+@function default($subject, $object: 'uno') {
+  @return map-get(map-get($defaultSettings, $subject), $object);
+}
+// @function sprite($map) {
+//   @return map-get($sprites, $map);
+// }
+// @function color($page, $classfic: 'main') {
+//   @return map-get(map-get($colors, $page), $classfic);
+// }

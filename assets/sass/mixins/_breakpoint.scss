@@ -1,0 +1,30 @@
+/*
+  Breakpoint System mixin
+  - Version: 2.2
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+// Breakpoint In Viewport
+@mixin breakpoint-xl(){@media (min-width: default(vp,lg)) and (max-width: default(vp,xl) - 1){@content;}}
+@mixin breakpoint-md(){@media (min-width: default(vp,md)) and (max-width: default(vp,lg)- 1){@content;}}
+@mixin breakponit-sm(){@media (min-width: default(vp,sm)) and (max-width: default(vp,md) - 1){@content;}}
+
+// Breakopint With Manually Viewport
+@mixin breakpoint-d($sz) {@media only screen and (max-width : #{$sz - 1}) { @content; }}
+@mixin breakpoint-u($sz) {@media only screen and (min-width : $sz) { @content; }}
+@mixin breakpoint-b($sz-s,$sz-l) {@media (min-width: $sz-s + 1) and (max-width: $sz-l){@content;}}
+
+// Breakopint With Default Vieport, only support up/ down
+@mixin responsive($responsiveSizingSetting: 'up') {
+  @if ($responsiveSizingSetting == 'up') or ($responsiveSizingSetting == 'u') {
+    @media only screen and (min-width : #{default(vp, default(vp, breaking))}) { @content};
+  }
+  @if ($responsiveSizingSetting == 'down') or ($responsiveSizingSetting =='d') {
+    @media only screen and (max-width : #{default(vp, default(vp, breaking)) - 1}) { @content };
+  }
+}
+// responsvie shortcut
+@mixin rps($rpsSizingSetting) {
+  @include responsive($rpsSizingSetting){@content}
+}

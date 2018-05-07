@@ -1,0 +1,58 @@
+/*
+  Config Settings
+  - Version: 2.2
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+$defaultSettings: (
+  // Colors Setting
+  color: (
+    uno: #a17228,
+    dos: #678333,
+    tres: #1c6690,
+    cuatro: #8c3932,
+    cinco: #ecece0
+  ),
+
+  // Font Sizing
+  fontsize: (
+    base: 16px,
+    tw: 16px
+  ),
+  // Viewport Settings
+  vp: (
+    xl :1200px,
+    lg :992px,
+    md:768px,
+    sm: 576px,
+    iphone5: 320px,
+    iphone6: 375px,
+    iphone6p: 414px,
+    breaking: 'lg' // setting main breakpoint
+  ),
+
+  // Header Sizing
+  logoSize: (
+    dsk_width: 80px,
+    dsk_height: 80px,
+    dvi_width: 70px,
+    dvi_height: 70px,
+    xs_width: 50px,
+    xs_height: 50px
+  ),
+
+  // dialogue Content Settings
+  manually: (
+    fontColor: rgb(80,80,80),
+    fontSize: 16px,
+    headlineColor: rgb(5, 102, 194)
+  ),
+
+  // Setting Container max Size
+  containerSizing: (
+    xl: '1280px'
+  )
+);
+
+$default_ColorIndex: 'uno', 'dos', 'tres', 'cuatro', 'cinco';

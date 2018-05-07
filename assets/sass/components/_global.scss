@@ -1,0 +1,101 @@
+/*
+  Global Settings
+  - Version: 2.2
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+body{
+  &, &>*{
+    @include language{
+      font-size: default(fontsize);
+      line-height: 1.65em;
+      letter-spacing: .03em;
+      word-spacing: 0.1em;
+    }
+    @include language(tw){
+      font-size: default(fontsize,tw);
+      line-height:1.8em;
+      letter-spacing: .06em;
+      // text-shadow:0 0 .01em rgba(0,0,0,.3);
+    }
+    @include language(cn){
+      font-size: default(fontsize,tw);
+      line-height:1.8em;
+      letter-spacing: .06em;
+      // text-shadow:0 0 .01em rgba(0,0,0,.3);
+    }
+    @include language(en){
+      font-size: default(fontsize,en);
+      line-height: 1.65em;
+      letter-spacing: .03em;
+      word-spacing: 0.1em;
+    }
+  }
+}
+
+strong, b {
+  color: default(color);
+  font-weight: 400;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size:1em;
+	line-height:1em;
+	color: default(color);
+	font-weight: 300;
+	line-height: 1em;
+	margin: 0 0 0.5em 0;
+}
+
+sub {
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
+}
+
+sup {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
+}
+
+hr {
+	border: 0;
+	border-bottom: solid 2px default(color, uno);
+	margin: 2em 0;
+}
+
+.navbar-toggler{
+	cursor: pointer;
+}
+.clear{
+	clear:both;
+}
+.no-pseudo{
+  &:before,&:after{
+    display:none !important;
+  }
+}
+
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.container{
+  @if default(containerSizing, xl) != null {
+    @include breakpoint-u(default(vp,xl)){
+      max-width: #{default(containerSizing, xl)} !important;
+    }
+  }
+}

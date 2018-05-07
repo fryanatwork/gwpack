@@ -1,0 +1,168 @@
+/*
+	User Content Style Settings
+	- Version: 2.2
+	- Author: Fryan
+	- Modified: 2018-05-07
+*/
+
+.dialogue{
+	display: block;
+	width: 100%;
+	overflow-x: hidden;
+	&{
+		color: default(manually, fontColor) !important;
+		*{
+			// extend on fontpack
+			font-family:'EN','M','W','L','Noto Sans TC', sans-serif !important;
+			word-break: initial !important;
+			text-justify: inter-word !important;
+			// manually setting
+			:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+				line-height: 1.8em;
+				// text-shadow: 0 0 .15px fade-out(default(manually, fontColor), .2);
+				font-size: default(manually, fontSize);
+				@include responsive(up){
+					letter-spacing: .135em;
+				}
+				@include responsive(down){
+					letter-spacing: .08em;
+				}
+				[style*="color"]{
+					& ,*{
+						// text-shadow: 0 0 0 !important;
+					}
+				}
+			}
+		}
+	}
+	div:not(.row):not([class*='col']),p{
+		display: block;
+		margin-bottom: 1.85em;
+	}
+	strong{
+		font-weight: bold !important;
+	}
+ 	h1,h2,h3,h4,h5,h6{
+		border: 0;
+		padding: 0;
+		margin: 0;
+		padding-top: 1.8rem;
+		padding-bottom: .2rem;
+		display: block;
+		line-height: 1.3em;
+		letter-spacing: .3em;
+		*{
+			padding: 0;
+			margin: 0;
+			display: inline-block;
+		}
+		&,*{
+			letter-spacing: .15em;
+			font-weight: bold;
+		}
+		&:before,&:after{display:none !important;}
+	}
+
+	$headerTag: 1,2,3,4,5,6;
+	$headerSize: 1.4, 1.25, 1.2, 1.15, 1.1, 1.05;
+	@each $now in $headerTag{
+		$i: index($headerTag, $now);
+		#{h+$now}, #{h+$now} *{
+			// text-shadow: 0 0 0 !important;
+			font-size: #{default(manually, fontSize) * nth($headerSize, $i)} !important;
+			&:not(style), &.gl-titling{
+				@if $now <= 3 {
+					color: default(manually, headlineColor);
+					// text-shadow: 0 0 .03 default(manually, headlineColor);
+					line-height: 1.5em;
+					letter-spacing: .15em;
+				}
+				@else {
+					color: mix(default(manually, headlineColor), black, 50%);
+					// text-shadow: 0 0 .03 mix(default(manually, headlineColor), black, 50%);
+					line-height: 1.3em;
+					letter-spacing: .1em;
+				}
+				*{
+					color: inherit;
+					&[style]{
+						color: default(manually, fontColor);
+					}
+				}
+			}
+		}
+	}
+
+	//List Style
+	ol,ul{
+		margin:.35em 0 1.25em;
+		padding-left:1.25em;
+		*{
+			letter-spacing: .02em !important;
+			font-size: .95em;
+		}
+	}
+	ul{list-style: disc;}
+	ol{list-style: decimal;}
+
+	//Responsive Image
+	img{
+		width: auto !important;
+		max-width: 100% !important;
+		height:auto !important;
+		margin-bottom: 1.25em;
+	}
+
+	//Code, Quote
+	code,blockquote{
+		position: relative;
+		display:block;
+		max-width: 100%;
+		background:fade-out(default(color,uno),.7);
+		border-left:3px solid default(color,uno);
+		border-radius: 0;
+		padding:1.25em 1.25em .8em 1.25em;
+		margin:1.25em;
+		&:before{
+			position:absolute;top:0;right:0;
+			display:inline-block;
+			background: fade-out(default(color,uno),.7);
+			line-height: 1em;
+			padding:.2em .5em;
+			font-family: monospace, monospace;
+			font-size:#{default(manually, fontSize) * .85};
+		}
+	}
+	blockquote{
+		&:before{content:'Quote';}
+	}
+	code{
+		&:before{content:'Code';}
+		font-family: monospace, monospace;
+		color:default(manually, Color);
+	}
+
+	//Clear All, font only
+	&.clear{
+		&, *{
+			font-size: 1em !important;
+			color: default(manually, fontColor) !important;
+			line-height: 1.3em !important;
+			// text-shadow: 0 0 .001em default(manually, fontColor) !important;
+			letter-spacing: 0.08em !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		p,div,ul,ol{
+			&:after{
+				content: '\A';
+				white-space: pre;
+			}
+		}
+	}
+	&.withoutImage{
+		img{
+			display: none !important;
+		}
+	}
+}

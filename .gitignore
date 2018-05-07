@@ -1,0 +1,9 @@
+*.sublime-project
+*.sublime-workspace
+.sass-cache/
+_notes/
+_Build/
+bower_components/
+node_modules/
+dist/*
+plugins/bundle/*

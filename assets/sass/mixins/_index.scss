@@ -1,0 +1,17 @@
+/*
+  Index of mixins
+  - Version: 2.2
+  - Author: Fryan
+  - Modified: 2018-05-07
+*/
+
+// import configuration
+@import '../config';
+
+//import mixins
+@import 'animation';
+@import 'border';
+@import 'breakpoint';
+@import 'cheatsheet';
+@import 'fetching';
+@import 'rootpack';
