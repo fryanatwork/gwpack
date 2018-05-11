@@ -1,6 +1,5 @@
 /*
   gulp sass
-  - Version: 1.0.1-alpha.1
   - Author: Fryan
   - Modified: 2018-05-07
 */
@@ -24,4 +23,7 @@ gulp.task('sass', function() {
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest(path.buildAssets))
     .pipe(browserSync.stream())
+    .on('finish', function () {
+      console.clear()
+    })
 });

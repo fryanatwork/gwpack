@@ -1,6 +1,5 @@
 /*
   gulp duplicate files
-  - Version: 1.0.1-alpha.1
   - Author: Fryan
   - Modified: 2018-05-07
 */
@@ -37,7 +36,9 @@ gulp.task('dp_images', function () {
   getTarget().forEach( function (element) {
     gulp.src(element.target)
       .pipe(gulp.dest(path.buildAssets + 'images/' + element.path))
-      .pipe(browserSync.stream())
+      .on('finish', function () {
+        console.clear()
+      })
   })
 })
 
@@ -50,8 +51,19 @@ gulp.task('dp_robot', function () {
   .pipe(gulp.dest(path.build))
 })
 
+gulp.task('dp_js', function () {
+  gulp.src(path.plugins + 'bundle/bundle.js')
+    .pipe(gulp.dest(path.buildAssets))
+    .on('finish', function () {
+      console.clear()
+    })
+})
+
 // task
-gulp.task('duplicate', [
+gulp.task('duplicateFiles', [
   'dp_images',
-  'dp_robot'
-])
+  'dp_robot',
+  'dp_js'
+], function () {
+  console.clear()
+})

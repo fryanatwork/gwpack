@@ -1,6 +1,5 @@
 /*
   gulp webserver
-  - Version: 1.0.1-alpha.1
   - Author: Fryan
   - Modified: 2018-05-07
 */
