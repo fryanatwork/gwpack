@@ -25,7 +25,7 @@ gulp.task('extender', function () {
   .pipe(replaceInclude(fileIncludeReplactment))
   .pipe(gulp.dest(path.build))
   .on('finish', function () {
-    console.clear()
+    // console.clear()
   })
 })
 
@@ -33,5 +33,5 @@ gulp.task('extender', function () {
 gulp.task('handleHTML', [
   'extender'
 ], function () {
-  console.clear()
+  // console.clear()
 })

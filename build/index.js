@@ -10,7 +10,7 @@ gulp.task('default', [
   'watch',
   'build'
 ], function () {
-  console.clear()
+  // console.clear()
 });
 
 // build
@@ -20,5 +20,5 @@ gulp.task('build', [
   'duplicateFiles',
   'handleHTML'
 ], function () {
-  console.clear()
+  // console.clear()
 });

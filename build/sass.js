@@ -24,6 +24,6 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(path.buildAssets))
     .pipe(browserSync.stream())
     .on('finish', function () {
-      console.clear()
+      // console.clear()
     })
 });

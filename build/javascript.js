@@ -15,7 +15,7 @@ gulp.task('webpack', function () {
     )
     .pipe(gulp.dest('./plugins/bundle/'))
     .on('finish', function () {
-      console.clear()
+      // console.clear()
     })
 })
 
@@ -23,5 +23,5 @@ gulp.task('webpack', function () {
 gulp.task('javascript', [
   'webpack'
 ], function () {
-  console.clear()
+  // console.clear()
 })

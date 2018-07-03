@@ -14,7 +14,7 @@ gulp.task('minifyHTML', function () {
       .pipe(htmlmin({collapseWhitespace: true,removeComments: true}))
       .pipe(gulp.dest(path.build))
       .on('finish', function () {
-        console.clear()
+        // console.clear()
         util.log('[Underbuild success!]')
       })
     }, 500);
@@ -24,5 +24,5 @@ gulp.task('minifyHTML', function () {
 gulp.task('underbuild', [
   'minifyHTML'
 ], function () {
-  console.clear()
+  // console.clear()
 })

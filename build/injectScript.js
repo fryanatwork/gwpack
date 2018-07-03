@@ -10,7 +10,7 @@ const inject = require('gulp-inject')
 gulp.task('injectScript', [
     'injectScript-WorkFlow'
   ], function () {
-    console.clear()
+    // console.clear()
 })
 
 // extender
@@ -34,6 +34,6 @@ gulp.task('injectScript-WorkFlow', function () {
     .on('error', function () {})
     .pipe(gulp.dest(path.build))
     .on('finish', function () {
-      console.clear()
+      // console.clear()
     })
 })

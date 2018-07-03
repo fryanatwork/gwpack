@@ -37,7 +37,7 @@ gulp.task('dp_images', function () {
     gulp.src(element.target)
       .pipe(gulp.dest(path.buildAssets + 'images/' + element.path))
       .on('finish', function () {
-        console.clear()
+        // console.clear()
       })
   })
 })
@@ -55,7 +55,7 @@ gulp.task('dp_js', function () {
   gulp.src(path.plugins + 'bundle/bundle.js')
     .pipe(gulp.dest(path.buildAssets))
     .on('finish', function () {
-      console.clear()
+      // console.clear()
     })
 })
 
@@ -65,5 +65,5 @@ gulp.task('duplicateFiles', [
   'dp_robot',
   'dp_js'
 ], function () {
-  console.clear()
+  // console.clear()
 })
