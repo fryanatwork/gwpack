@@ -43,17 +43,17 @@ gulp.task('watch', function () {
     gulp.start('javascript')
     })
 
-  // injectScript
-  function inject () {
-    watch([
-      path.build + '**/*.{html,css,js}'
-    ], function () {
-      gulp.start('injectScript')
-    })
-  }
-  setTimeout(function () {
-    inject()
-  }, 1000)
+  // // injectScript
+  // function inject () {
+  //   watch([
+  //     path.build + '**/*.{html,css,js}'
+  //   ], function () {
+  //     gulp.start('injectScript')
+  //   })
+  // }
+  // setTimeout(function () {
+  //   inject()
+  // }, 1000)
 
   // browserSync
   watch([

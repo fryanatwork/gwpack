@@ -26,6 +26,9 @@ gulp.task('extender', function () {
   .pipe(gulp.dest(path.build))
   .on('finish', function () {
     // console.clear()
+    setTimeout(() => {
+      gulp.start('injectScript')
+    }, 300);
   })
 })
 
