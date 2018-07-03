@@ -8,10 +8,13 @@
 <!-- inject:css --><!-- endinject -->
 </head>
 <body>
-	<!-- @@include /components/baseHeader.tpl -->
-	the foo var is "<!-- @@var foo -->"
-	<br>
-<!-- @@placeholder= includeContent -->
+	<div id="app">
+			<!-- @@include /components/baseHeader.tpl -->
+			<main class="main">
+				<!-- @@placeholder= includeContent -->
+			</main>
+			<!-- @@include /components/baseFooter.tpl -->
+	</div>
 
 <!-- inject:js --><!-- endinject -->
 <script>
