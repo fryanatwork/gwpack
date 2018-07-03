@@ -1,17 +1,21 @@
 /*
   Index of mixins
-  - Version: 2.2
+  - Version: 2.3
   - Author: Fryan
-  - Modified: 2018-05-07
 */
 
-// import configuration
+// Configuration
 @import '../config';
+
+// dataFetching
+@import 'fetching';
+
+// Verify Variable
+@import 'verify';
 
 //import mixins
 @import 'animation';
 @import 'border';
 @import 'breakpoint';
 @import 'cheatsheet';
-@import 'fetching';
 @import 'rootpack';

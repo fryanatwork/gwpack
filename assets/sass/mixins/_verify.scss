@@ -1,0 +1,19 @@
+/*
+  Verify variables
+  - Version: 2.3
+  - Author: Fryan
+*/
+
+// Verify variable vp
+@function checkVP($string) {
+  $getVar: default(vp, $string);
+  @if (type-of($getVar) == number) {
+    @return default(vp, $string);
+  }
+  @else if (type-of($string) == number) {
+    @return $string;
+  }
+  @else {
+    @error 'Invalid variable "#{$string }".';
+  }
+}

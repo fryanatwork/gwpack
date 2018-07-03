@@ -2,7 +2,6 @@
   Config Settings
   - Version: 2.2
   - Author: Fryan
-  - Modified: 2018-05-07
 */
 
 $defaultSettings: (
@@ -18,7 +17,9 @@ $defaultSettings: (
   // Font Sizing
   fontsize: (
     base: 16px,
-    tw: 16px
+    tw: 16px,
+    cn: 16px,
+    en: 14px
   ),
 
   // Viewport Settings
@@ -56,4 +57,5 @@ $defaultSettings: (
   )
 );
 
+$mixinsDefaultColor: 'uno';
 $default_ColorIndex: 'uno', 'dos', 'tres', 'cuatro', 'cinco';

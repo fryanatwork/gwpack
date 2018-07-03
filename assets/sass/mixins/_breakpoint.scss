@@ -1,30 +1,52 @@
 /*
   Breakpoint System mixin
-  - Version: 2.2
+  - Version: 2.3
   - Author: Fryan
-  - Modified: 2018-05-07
 */
 
-// Breakpoint In Viewport
-@mixin breakpoint-xl(){@media (min-width: default(vp,lg)) and (max-width: default(vp,xl) - 1){@content;}}
-@mixin breakpoint-md(){@media (min-width: default(vp,md)) and (max-width: default(vp,lg)- 1){@content;}}
-@mixin breakponit-sm(){@media (min-width: default(vp,sm)) and (max-width: default(vp,md) - 1){@content;}}
+// Breakpoint UP is not including self viewport, it's up to self viewport + 1.
+// Breakpoint Down is including self viewport.
 
 // Breakopint With Manually Viewport
-@mixin breakpoint-d($sz) {@media only screen and (max-width : #{$sz - 1}) { @content; }}
-@mixin breakpoint-u($sz) {@media only screen and (min-width : $sz) { @content; }}
-@mixin breakpoint-b($sz-s,$sz-l) {@media (min-width: $sz-s + 1) and (max-width: $sz-l){@content;}}
+@mixin breakpoint-d($sz) {
+  @media only screen and (max-width: #{checkVP($sz)}) {@content;};
+}
+@mixin breakpoint-u($sz) {
+  @media only screen and (min-width: #{checkVP($sz) + 1}) {@content;};
+}
+@mixin breakpoint-b($szFrom, $szTo) {
+  @media (min-width: #{checkVP($szFrom) + 1}) and (max-width: #{checkVP($szTo) - 1}) {@content;}
+}
+// shortcuts
+@mixin bkd($sz)
+  {@include breakpoint-d($sz) {@content;};
+}
+@mixin bku($sz) {
+  @include breakpoint-u($sz) {@content;};
+}
+@mixin bkb($szFrom, $szTo) {
+  @include breakpoint-b($szFrom, $szTo) {@content;};
+}
 
 // Breakopint With Default Vieport, only support up/ down
 @mixin responsive($responsiveSizingSetting: 'up') {
-  @if ($responsiveSizingSetting == 'up') or ($responsiveSizingSetting == 'u') {
-    @media only screen and (min-width : #{default(vp, default(vp, breaking))}) { @content};
+  @if ($responsiveSizingSetting == 'up') or ($responsiveSizingSetting == 'u') or ($responsiveSizingSetting == 'U') {
+    @media only screen and (min-width: #{default(vp, default(vp, breaking)) + 1}) {@content;};
   }
-  @if ($responsiveSizingSetting == 'down') or ($responsiveSizingSetting =='d') {
-    @media only screen and (max-width : #{default(vp, default(vp, breaking)) - 1}) { @content };
+  @else if ($responsiveSizingSetting == 'down') or ($responsiveSizingSetting =='d') or ($responsiveSizingSetting =='D') {
+    @media only screen and (max-width: #{default(vp, default(vp, breaking))}) {@content;};
+  }
+  @else {
+    @error 'Invalid variable "#{$responsiveSizingSetting }".';
   }
 }
-// responsvie shortcut
+// shortcut
 @mixin rps($rpsSizingSetting) {
-  @include responsive($rpsSizingSetting){@content}
+  @include responsive($rpsSizingSetting) {@content;}
+}
+@mixin rpsu() {
+  @include responsive('u') {@content;};
+}
+@mixin rpsd() {
+  @include responsive('d') {@content;};
 }

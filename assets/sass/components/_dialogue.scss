@@ -1,8 +1,6 @@
 /*
 	User Content Style Settings
-	- Version: 2.2
 	- Author: Fryan
-	- Modified: 2018-05-07
 */
 
 .dialogue{
@@ -139,7 +137,7 @@
 	code{
 		&:before{content:'Code';}
 		font-family: monospace, monospace;
-		color:default(manually, Color);
+		color:default(manually, fontColor);
 	}
 
 	//Clear All, font only

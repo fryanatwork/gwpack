@@ -1,14 +1,12 @@
 /*
   Global Settings
-  - Version: 2.2
   - Author: Fryan
-  - Modified: 2018-05-07
 */
 
 body{
   &, &>*{
     @include language{
-      font-size: default(fontsize);
+      font-size: default(fontsize, base);
       line-height: 1.65em;
       letter-spacing: .03em;
       word-spacing: 0.1em;
@@ -20,7 +18,7 @@ body{
       // text-shadow:0 0 .01em rgba(0,0,0,.3);
     }
     @include language(cn){
-      font-size: default(fontsize,tw);
+      font-size: default(fontsize,cn);
       line-height:1.8em;
       letter-spacing: .06em;
       // text-shadow:0 0 .01em rgba(0,0,0,.3);
