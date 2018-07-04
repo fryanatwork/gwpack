@@ -19,9 +19,12 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(css)$/,
+				test: /\.(css|scss)$/,
 				use: ExtractTextPlugin.extract({
-					use: ['css-loader'],
+					use: [
+						'css-loader',
+						'sass-loader'
+					],
 					fallback: 'style-loader'
 				})
 			}
@@ -33,7 +36,8 @@ module.exports = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jquery': 'jquery',
-			'window.jQuery': 'jquery'
+			'window.jQuery': 'jquery',
+			'Popper': 'popper.js'
 		})
 	]
 }

@@ -1,8 +1,10 @@
 import $ from 'jquery'
 window.jQuery = $;
 window.$ = $;
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// bootatrap
+import './bootstrap-cus.js'
+import './bootstrap-cus.scss';
 
 $(() => {
   console.log('hunted')
