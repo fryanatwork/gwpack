@@ -5,6 +5,6 @@
 */
 
 serverSettings = {
-  open: true,
+  open: false,
   port: '5001'
 }

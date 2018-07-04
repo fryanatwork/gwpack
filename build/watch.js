@@ -12,7 +12,7 @@ gulp.task('watch', function () {
   // sass
   watch([
     path.srcAssets + '**/*.scss',
-    './plugins/bundle.css'
+    path.plugins + 'bundle/*.css'
   ], function () {
     gulp.start('sass')
   })
