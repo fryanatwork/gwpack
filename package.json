@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp clean & gulp",
-    "build": "gulp clean & gulp build",
-    "underbuild": "gulp clean & gulp build & gulp underbuild"
+    "build": "gulp clean & gulp build && gulp beautify"
   },
   "repository": {
     "type": "",
@@ -39,6 +38,7 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gulp-clean": "^0.4.0",
+    "gulp-html-beautify": "^1.0.1",
     "gulp-sass": "^3.1.0",
     "gutil": "^1.6.4",
     "jquery": "^3.3.1",
