@@ -8,7 +8,7 @@ const clean = require('gulp-clean')
 
 // task
 gulp.task('clean', function () {
-  return gulp.src(path.build)
+return gulp.src(path.build + '*')
     .pipe(clean({ force: true, reade: false }))
     .on('finish', function () {
       console.clear()
