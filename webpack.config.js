@@ -37,7 +37,8 @@ module.exports = {
 			jQuery: 'jquery',
 			'window.jquery': 'jquery',
 			'window.jQuery': 'jquery',
-			'Popper': 'popper.js'
+			'Popper': 'popper.js',
+			'Util': 'exports-loader?Util!bootstrap/js/dist/util',
 		})
 	]
 }
