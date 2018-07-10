@@ -19,6 +19,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
+			},
+			{
 				test: /\.(css|scss)$/,
 				use: ExtractTextPlugin.extract({
 					use: [
